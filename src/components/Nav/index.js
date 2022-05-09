@@ -1,27 +1,49 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { capitalizeFirstLetter } from '../../utils/helpers';
 
-function Nav() {
+function Nav({ currentPage, handlePageChange }) {
+    
+
+    useEffect(() => {
+        document.title = capitalizeFirstLetter(currentPage)
+    }, [currentPage])
+
     return(
         <header>
-            <h2>
-                <a href='/'>
+            <h1>
+                <a 
+                    href='#about'
+                    onClick={() => handlePageChange('About')}
+                >
                     Mubo Houston
                 </a>
-            </h2>
+            </h1>
             <nav>
                 <ul>
-                    <li>
-                        About Me
-                    </li>
-                    <li>
-                        Portfolio
-                    </li>
-                    <li>
+                   <li>
+                        <a
+                            href='#contact'
+                            onClick={() => handlePageChange('Contact')}
+                        >
                         Contact
-                    </li>
-                    <li>
+                        </a>
+                   </li>
+                   <li>
+                        <a
+                            href='#portfolio'
+                            onClick={() => handlePageChange('Portfolio')}
+                        >
+                        Portfolio
+                        </a>
+                   </li>
+                   <li>
+                        <a
+                            href='#resume'
+                            onClick={() => handlePageChange('Resume')}
+                        >
                         Resume
-                    </li>
+                        </a>
+                   </li>
                 </ul>
             </nav>
         </header>
