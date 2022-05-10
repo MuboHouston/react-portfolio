@@ -48,28 +48,36 @@ function ContactForm() {
     }
 
     return(
-        <section>
-            <h1>Contact Me</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
-                </div>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
-                </div>
-                <div>
-                    <label htmlFor="message">Message:</label>
-                    <textarea name="message" rows="5" defaultValue={message} onBlur={handleChange} />
-                    {errorMessage && (
-                        <div>
-                            <p className="error-text">{errorMessage}</p>
-                        </div>
-                    )}
-                </div>
-                <button type="submit">Submit</button>
-            </form>
+        <section className="contact">
+            <div>
+                <h1 className="section-title">Contact Me</h1>
+            </div>
+            <div id="contact-form">
+                <p>
+                    Got a question, proposal, or just want to say hello?<br />
+                    <span>Go ahead.</span>
+                </p>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="name">Name:</label>
+                        <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="message">Message:</label>
+                        <textarea name="message" rows="5" defaultValue={message} onBlur={handleChange} />
+                        {errorMessage && (
+                            <div>
+                                <p className="error-text">{errorMessage}</p>
+                            </div>
+                        )}
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>    
         </section>
     )
 }

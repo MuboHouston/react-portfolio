@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Nav from './components/Nav'
-import About from './components/About'
+import About from './components/About';
 import ContactForm from './components/Contact';
-// import Portfolio from './components/Portfolio'
-// import Resume from './components/resume'
+import Portfolio from './components/Portfolio';
+// import Resume from './components/resume';
+//import Footer from './component/footer';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('About');
@@ -15,9 +16,9 @@ function App() {
     if(currentPage === 'Contact') {
       return <ContactForm />
     }
-    // if(currentPage === 'Portfolio') {
-    //   return <Portfolio />
-    // }
+    if(currentPage === 'Portfolio') {
+      return <Portfolio />
+    }
     // if(currentPage === 'Resume') {
     //   return <Resume />
     // }
@@ -31,7 +32,10 @@ function App() {
         currentPage={currentPage}
         handlePageChange={handlePageChange}
       />
-      {renderPage()}
+      <main>
+        {renderPage()}
+      </main>
+      {/* <Footer /> */}
     </div>
   );
 }

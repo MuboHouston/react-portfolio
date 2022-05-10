@@ -9,9 +9,10 @@ function Nav({ currentPage, handlePageChange }) {
     }, [currentPage])
 
     return(
-        <header>
+        <header className=''>
             <h1>
                 <a 
+                    className='header-name nav'
                     href='#about'
                     onClick={() => handlePageChange('About')}
                 >
@@ -19,21 +20,29 @@ function Nav({ currentPage, handlePageChange }) {
                 </a>
             </h1>
             <nav>
-                <ul>
+                <ul className='nav'>
                    <li>
-                        <a
-                            href='#contact'
-                            onClick={() => handlePageChange('Contact')}
+                        <a 
+                            href='#about'
+                            onClick={() => handlePageChange('About')}
                         >
-                        Contact
+                            About
                         </a>
-                   </li>
-                   <li>
+                    </li>
+                    <li>
                         <a
                             href='#portfolio'
                             onClick={() => handlePageChange('Portfolio')}
                         >
                         Portfolio
+                        </a>
+                   </li>
+                    <li>
+                        <a
+                            href='#contact'
+                            onClick={() => handlePageChange('Contact')}
+                        >
+                        Contact
                         </a>
                    </li>
                    <li>
