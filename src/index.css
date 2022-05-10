@@ -206,3 +206,24 @@ header nav ul li a {
   cursor: pointer;
 }
 /*Contact section end*/
+
+/* Footer section start */
+.social-media {
+  width: 100%;
+  bottom: 0;
+  position:fixed;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content:space-evenly;
+  margin: 40px auto 0 auto;
+  width: 30%;
+  padding: 10px;
+}
+
+.social-icon-link {
+  color: var(--tertiary);
+  font-size: 35px;
+}

@@ -4,7 +4,7 @@ import About from './components/About';
 import ContactForm from './components/Contact';
 import Portfolio from './components/Portfolio';
 // import Resume from './components/resume';
-//import Footer from './component/footer';
+import Footer from './components/Footer';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('About');
@@ -35,7 +35,7 @@ function App() {
       <main>
         {renderPage()}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
