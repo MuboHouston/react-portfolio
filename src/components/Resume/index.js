@@ -7,7 +7,7 @@ function Resume() {
             Resume
         </h2>
 
-        <div className='resume'>
+        <div className='resume rounded'>
             <h5>Download my <a href={require(`../../assets/resume.pdf`)} download="MH-resume" className='resume-link'>resume</a></h5>
 
             <div className='frontend-section'>

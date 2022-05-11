@@ -33,7 +33,7 @@ body {
 header {
   background-color: var(--secondary);
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   position: sticky;
   position: -webkit-sticky;
@@ -135,7 +135,6 @@ header nav ul li a:hover, header nav ul li a:focus {
 .about-section .summary{
   flex: 2;
 }
-
 /*About component end*/
 
 /*Contact component start*/
@@ -227,7 +226,7 @@ header nav ul li a:hover, header nav ul li a:focus {
 .cards-site, .cards-git {
   text-decoration: none;
   color: var(--secondary);
-  font-size: 40px;
+  font-size: 47px;
   font-weight: bold;
   text-decoration: underline;
   padding: 15px;
@@ -268,7 +267,7 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   justify-content:space-evenly;
-  margin: 40px auto 0 auto;
+  margin: 20px auto;
   width: 30%;
   padding: 10px;
 }
@@ -283,3 +282,139 @@ footer {
   color: var(--tertiary);
 }
 /* Footer component end */
+
+/*MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
+@media screen and (max-width: 980px) {
+  .section-title {
+    width: 80%;
+  }
+  
+  /* Nav starts */
+  header {
+    width: 100%;
+    padding: 10px;
+  }
+
+  header h1 {
+    flex: 1;
+    font-size: 32px;
+  }
+
+  header nav {
+    flex: 1;
+  }
+
+  header nav ul li{
+    font-size: 24px;
+  }
+
+  header nav ul li:hover {
+    font-size: 25px;
+  }
+  /* Nav ends */
+
+  /* about starts */
+  #about-me {
+    margin: 40px auto;
+  }
+
+  .about-flex {
+    width: 80%;
+    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-flex img {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 20px;
+  }
+  /* about ends */
+
+  /* portfolio starts */
+  .cards-links {
+  padding: 25px;
+  }
+  /* portfolio ends */
+
+  /* resume starts */
+  .resume{
+  width: 80%; 
+  }
+  /* resume ends */
+
+  .social-icons {
+  margin: 20px auto 0 auto;
+  width: 50%;
+  padding: 10px;
+  }
+}
+
+/*MEDIA QUERY FOR TABLETS AND SMALLER*/
+@media screen and (max-width: 768px) {
+  .section-title {
+    width: 75%;
+  }
+
+  /* nav starts */
+  header {
+    flex-direction: column;
+  }
+
+  header h1 {
+    align-self: center;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  header nav ul {
+      justify-content: space-around;
+  }
+
+  header nav ul li{
+      font-size: 20px;
+  }
+
+  header nav ul li:hover {
+      font-size: 23px;
+  }
+  /* nav ends */
+
+  /* about starts */
+  .about-section {
+    padding-bottom: 0px;
+  }
+
+  .about-flex {
+    width: 90%;
+  }
+
+  .about-section img {
+    width: 245px;
+    height: 245px;
+}
+  /* about ends */
+
+  /* portfolio starts */
+  .cards-links {
+    padding: 20px;
+  }
+
+  .cards-site, .cards-git {
+    font-size: 35px;
+  }
+  /* portfolio ends */
+
+  /* contact starts */
+  #contact-form {
+    width: 90%;
+  }
+  /* contact ends */
+
+  /* footer starts */ 
+  .social-icons {
+    margin: 0 auto;
+  }
+  /* footer ends */
+}
