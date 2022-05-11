@@ -2,10 +2,6 @@
   --primary: #eee7e1;
   --secondary: #1a1919;
   --tertiary: #e2c2b3;
-  --error: rgb(228, 46, 1);
-  --spacing-one: calc(1rem * 0.5);
-  --spacing-two: calc(1rem);
-  --spacing-five: calc(2.5rem);
   --heading-font: 'Abril Fatface', Verdana, Geneva, Tahoma, sans-serif;
   --text-font: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -18,8 +14,8 @@
 
 body {
   font-family: var(--text-font);
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
+  color: var(--secondary);
+  background-color: var(--primary);
   font-size: 16px;
 }
 
@@ -47,21 +43,22 @@ header {
 }
 
 header h1 {
-  font-size: 37px;
-  /* font-weight: normal; */
+  font-size: 45px;
   font-family: var(--heading-font);
   flex: 2;
 }
 
 .header-name {
+  text-decoration: none;
   color: var(--primary);
 }
 
-header h1 a:link {
+.header-name:link {
   text-decoration: none;
 }
 
-header h1 a:hover {
+.header-name:hover {
+  color:var(--tertiary);
   font-weight: bold;
 }
 
@@ -81,7 +78,6 @@ header nav ul {
 header nav ul li {
   font-weight: normal;
   font-size: 37px;
-  border-bottom: 1px solid var(--primary);
 }
 
 header nav ul li:link {
@@ -89,21 +85,30 @@ header nav ul li:link {
 }
 
 header nav ul li:hover {
-  border-bottom: none;
-  text-decoration: line-through;
   font-size: 40px;
   font-size-adjust: 20px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary);
 }
 
 header nav ul li a {
   color: var(--primary);
   text-decoration: none;
 }
+
+header nav ul li a:hover {
+  color: var(--tertiary);
+}
 /*Header section end*/
 
 /*About section start*/
 .about-section {
   padding-bottom: 20px;
+}
+
+#about-me {
+  margin: 100px auto;
+  background-color: var(--tertiary);
 }
 
 .about-flex {
@@ -150,6 +155,11 @@ header nav ul li a {
 /*About section end*/
 
 /*Contact section start*/
+#contact-form{
+  width: 60%;
+  margin: 10px auto 0 auto;
+}
+
 #contact-form p {
   line-height: 1.5;
   margin-bottom: 20px;
@@ -161,10 +171,9 @@ header nav ul li a {
 
 #contact-form input, #contact-form textarea {
   border: 1px solid;
-  display: block;
   padding: 7px 15px;
   font-size: 16px;
-  width: 60%;
+  width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
   border-radius: 10px;
@@ -172,24 +181,23 @@ header nav ul li a {
 
 #contact-form textarea {
   height: 200px;
-  width: 60%;
+  width: 100%;
   padding: 7px 15x;
   font-size: 18px;
   margin-bottom: 15px;
   margin-top: 5px;
   border-radius: 10px;
-  box-sizing: border-box;
   resize: none;
   font-family: var(--text-font);
 }
 
 #contact-form form div input:focus, #contact-form form div textarea:focus {
-  /* outline: none; */
+  outline: none;
   background-color: var(--tertiary);
 }
 
 #contact-form button {
-  width: 60%;
+  width: 100%;
   border: none;
   background-color: var(--secondary);
   color: var(--primary);
@@ -207,11 +215,45 @@ header nav ul li a {
 }
 /*Contact section end*/
 
+/* Portfolio section start */
+.main-container {
+  position: relative;
+}
+
+.cards-container {
+  position: relative;
+}
+
+.cards-container:hover {
+  transform: scale(.98);
+}
+
+.cards-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 65px;
+  font-family: var(--heading-font);
+}
+
+.cards-links a:hover {
+  color: var(--tertiary);
+}
+
+.cards-site, .cards-git {
+  text-decoration: none;
+  color: var(--secondary);
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 15px;
+}
+/* Portfolio section end */
+
 /* Footer section start */
-.social-media {
+footer {
+  position: absolute;
   width: 100%;
-  bottom: 0;
-  position:fixed;
 }
 
 .social-icons {
@@ -224,6 +266,12 @@ header nav ul li a {
 }
 
 .social-icon-link {
-  color: var(--tertiary);
+  color: var(--secondary);
   font-size: 35px;
+  text-decoration: none;
 }
+
+.social-icon-link:hover {
+  color: var(--tertiary);
+}
+/* Footer section end */

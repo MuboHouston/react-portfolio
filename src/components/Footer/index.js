@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <section>
+    <footer>
         <div className='social-media'>
             <div className='social-icons'>
                 <a 
@@ -29,9 +29,16 @@ function Footer() {
                 >
                     <i className='fab fa-twitter'></i>
                 </a>
+                <a 
+                    className='social-icon-link'
+                    href='mailto: houston.mubo@gmail.com'
+                    aria-label='Email'
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
             </div>
         </div>
-    </section>
+    </footer>
   )
 }
 

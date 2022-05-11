@@ -1,43 +1,29 @@
-import React, {useState} from "react";
+import React from "react";
+import {capitalizeFirstLetter} from '../../utils/helpers'
 
-function ProjectList() {
-    const [projects]= useState([
-        {
-            name: 'dinnection',
-            type: 'MERN',
-            description: 'Dinnection is a full-stack social media web app for artists to connect, view, and promote contemporary art. After creating an account and signing in, if users want to add new art to the app then they would click "New Post". The user&#39s post is then stored in an AWS S3 bucket and the post displayed on the main page.'
-        },
-        {
-            name: 'budget',
-            type: 'Progress Web Application',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-        },
-        {
-            name: 'travelers',
-            type: 'HTML, JS, CSS, Fetch API',
-            description: 'Travelers is a full-stack web app for users planning travel within the United States during the COVID-19 pandemic. This app was created to help keep users up to date with the weather and COVID-19 cases, deaths, and risk.'
-        },
-        {
-            name: 'tech-blog',
-            type: 'MongoDB',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-        },
-        {
-            name: 'run-buddy',
-            type: 'HTML, CSS, JavaScript',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-        }
-    ])
+function ProjectList(props) {
+const { src, keys, text, type, site, git } = props
 
     return (
-        <div>
-            {projects.map((image)=> (
-                <img
-                src={require(`../../assets/${image.name}.png`)}
-                alt={image.name}
-                key={image.name}
-                />
-            ))}
+        <div className="col portfolio-cards">
+            <div className="cards-container">
+                <div className="card">
+                    <img
+                        className="card-img-top"
+                        alt={keys}
+                        src={src}
+                        key={keys}
+                    />
+                </div>
+                <div className="cards-links">
+                    <a className="cards-site" target='blank' href={site}>{capitalizeFirstLetter(keys)}</a>
+                    <a className="cards-git" target='blank' href={git}><i className='fab fa-github'></i></a>
+                </div>
+            </div>
+            <div className="card-body">
+                <h5 className="card-title">{type}</h5>
+                <p className="card-text">{text}</p>
+            </div>
         </div>    
     )
 }

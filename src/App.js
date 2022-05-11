@@ -27,7 +27,7 @@ function App() {
   const handlePageChange = (page) => setCurrentPage(page)
 
   return (
-    <div>
+    <div className='main-container'>
       <Nav 
         currentPage={currentPage}
         handlePageChange={handlePageChange}

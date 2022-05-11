@@ -2,12 +2,12 @@ import React from 'react'
 
 function About() {
     return(
-        <section id='about me' className='about-section'>
+        <section className='about-section'>
             <h2 className='section-title'> 
                 About
             </h2>
 
-            <div className='about-flex'>
+            <div id='about-me' className='about-flex rounded'>
                 <div className='profile-img'>
                     <img src={require(`../../assets/about-pic.jpg`)}
                     alt='professional-pic'
@@ -21,6 +21,11 @@ function About() {
                         <br />
                         I develop websites with HTML, CSS, JavaScript, JQuery, Bootstrap, Materialize, AWS S3, web APIs, and Node.js, focusing on accessibility, performance, and usability. When I'm not coding, you can find me biking, boxing, spending time with family, or learning new programing languages.
                     </p>
+
+                    <div>
+                        <h4>Currently Working On:</h4>
+                        <p>Gaining additional skills in AWS.</p>
+                    </div>
                 </div>
             </div>
         </section>
