@@ -3,7 +3,7 @@ import Nav from './components/Nav'
 import About from './components/About';
 import ContactForm from './components/Contact';
 import Portfolio from './components/Portfolio';
-// import Resume from './components/resume';
+import Resume from './components/Resume';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,9 +19,9 @@ function App() {
     if(currentPage === 'Portfolio') {
       return <Portfolio />
     }
-    // if(currentPage === 'Resume') {
-    //   return <Resume />
-    // }
+    if(currentPage === 'Resume') {
+      return <Resume />
+    }
   }
 
   const handlePageChange = (page) => setCurrentPage(page)

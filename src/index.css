@@ -29,7 +29,7 @@ body {
   width: 25%;
 }
 
-/*Header section start*/
+/*Nav component start*/
 header {
   background-color: var(--secondary);
   display: flex;
@@ -58,8 +58,7 @@ header h1 {
 }
 
 .header-name:hover {
-  color:var(--tertiary);
-  font-weight: bold;
+  color:var(--primary);
 }
 
 header nav {
@@ -88,7 +87,6 @@ header nav ul li:hover {
   font-size: 40px;
   font-size-adjust: 20px;
   text-decoration: none;
-  border-bottom: 1px solid var(--primary);
 }
 
 header nav ul li a {
@@ -96,12 +94,12 @@ header nav ul li a {
   text-decoration: none;
 }
 
-header nav ul li a:hover {
+header nav ul li a:hover, header nav ul li a:focus {
   color: var(--tertiary);
 }
-/*Header section end*/
+/*Nav component end*/
 
-/*About section start*/
+/*About component start*/
 .about-section {
   padding-bottom: 20px;
 }
@@ -138,23 +136,9 @@ header nav ul li a:hover {
   flex: 2;
 }
 
-.about-section .contact-button a {
-  color: var(--secondary);
-}
+/*About component end*/
 
-.about-section .contact-button a:link {
-  text-decoration: none;
-  text-decoration: underline;
-}
-
-.about-section .contact-button a:hover {
-  text-decoration: none;
-  font-style: italic;
-}
-
-/*About section end*/
-
-/*Contact section start*/
+/*Contact component start*/
 #contact-form{
   width: 60%;
   margin: 10px auto 0 auto;
@@ -213,9 +197,9 @@ header nav ul li a:hover {
   border: 1px solid var(--secondary);
   cursor: pointer;
 }
-/*Contact section end*/
+/*Contact component end*/
 
-/* Portfolio section start */
+/* Portfolio component start */
 .main-container {
   position: relative;
 }
@@ -248,9 +232,33 @@ header nav ul li a:hover {
   text-decoration: underline;
   padding: 15px;
 }
-/* Portfolio section end */
+/* Portfolio component end */
 
-/* Footer section start */
+/* Resume component start */
+.resume-section {
+  font-family: var(--text-font);
+}
+
+.resume{
+  background-color: var(--tertiary);
+  padding: 50px;
+  width: 50%;
+  margin: 50px auto;
+}
+
+.resume-link {
+  text-decoration: none;
+  font-weight: lighter;
+  color: var(--secondary);
+}
+
+.resume-link:hover{
+  color: var(--primary);
+  border-bottom: 1px solid var(--primary);
+}
+/* Resume component end */
+
+/* Footer component start */
 footer {
   position: absolute;
   width: 100%;
@@ -274,4 +282,4 @@ footer {
 .social-icon-link:hover {
   color: var(--tertiary);
 }
-/* Footer section end */
+/* Footer component end */
