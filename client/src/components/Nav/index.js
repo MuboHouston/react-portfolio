@@ -13,8 +13,8 @@ function Nav({ currentPage, handlePageChange }) {
             <h1>
                 <a 
                     className='header-name nav'
-                    href='#about'
-                    onClick={() => handlePageChange('About')}
+                    href='#home'
+                    onClick={() => handlePageChange('Home')}
                 >
                     Mubo Houston
                 </a>
