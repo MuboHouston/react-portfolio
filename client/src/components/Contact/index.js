@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { validateEmail } from '../../utils/helpers'
+import { useMutation } from '@apollo/client'
+import { ADD_CONTACT } from '../utils/mutations'
+import emailjs from 'emailjs-com'
 
 function ContactForm() {
     //errorMessage hook- the initial error message is an empty string
@@ -7,8 +10,9 @@ function ContactForm() {
 
     //formState hook- sets the initial state to empty strings
     const [ formState, setFormState ] = useState({ name: '', email: '', message: ''});
-
     const { name, email, message } = formState;
+    const [addContact] = useMutation(ADD_CONTACT)
+    const form = useRef();
     
     //syncing the internal state of the component formState with the user input from the DOM. 
     function handleChange(e){
@@ -37,14 +41,30 @@ function ContactForm() {
             //the name property of target refers to the name attribute of the form element
             setFormState({...formState, [e.target.name]: e.target.value})
         }
-    }
+    }   
     
     console.log(formState)
 
     //this function handles submission of the form data
-    function handleSubmit(e) {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(formState)
+
+        await emailjs.sendForm('gmail', 'template_dmppl69', form.current, 'YUzjj4QzlrQbGtNnp')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+    
+        await addContact({
+            variables: {
+                name: formState.name,
+                email: formState.email,
+                message: formState.message
+            }
+        })
+
     }
 
     return(
@@ -57,7 +77,7 @@ function ContactForm() {
                     Got a question, proposal, or just want to say hello?<br />
                     <span>Go ahead.</span>
                 </p>
-                <form onSubmit={handleSubmit}>
+                <form ref={form} onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="name">Name:</label>
                         <input type="text" name="name" defaultValue={name} onBlur={handleChange} />

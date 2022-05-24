@@ -6,6 +6,18 @@ import Home from './components/Home';
 import Portfolio from './components/Portfolio';
 import Resume from './components/Resume';
 import Footer from './components/Footer';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+
+//establish a new link to the GraphQL server
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001/graphql',
+});
+
+//instantiate the Apollo Client instance and create the connection to the API endpoint
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -31,16 +43,18 @@ function App() {
   const handlePageChange = (page) => setCurrentPage(page)
 
   return (
-    <div className='main-container'>
-      <Nav 
-        currentPage={currentPage}
-        handlePageChange={handlePageChange}
-      />
-      <main>
-        {renderPage()}
-      </main>
-      <Footer />
-    </div>
+    <ApolloProvider client={client}>
+      <div className='main-container'>
+        <Nav 
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+        />
+        <main>
+          {renderPage()}
+        </main>
+        <Footer />
+      </div>
+    </ApolloProvider>
   );
 }
 

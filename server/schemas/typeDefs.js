@@ -13,6 +13,7 @@ const typeDefs = gql `
 
     type Mutation {
         addContact(name: String!, email: String!, message: String!): Contact
+        deleteContact(name: String, email: String): Contact
     }
 `
 
