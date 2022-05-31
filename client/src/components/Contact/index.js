@@ -53,23 +53,20 @@ function ContactForm() {
 
         await emailjs.sendForm('gmail', 'template_dmppl69', form.current, 'YUzjj4QzlrQbGtNnp')
         .then((result) => {
-            console.log(result.text);
+            alert("Message sent! Talk soon :)") 
+            addContact({
+                variables: {
+                    name: formState.name,
+                    email: formState.email,
+                    message: formState.message
+                }
+            })
+            setFormState({name: '', email: '', message: ''})
+            window.location.assign('/')
+            console.log(result.text, formState);
         }, (error) => {
             console.log(error.text);
-        });
-    
-        await addContact({
-            variables: {
-                name: formState.name,
-                email: formState.email,
-                message: formState.message
-            }
-        })
-        
-        setErrorMessage({name: "", email: "", message: ""})
-
-        alert("Message sent! Talk soon :)")
-        window.location.assign('/')
+        });                                                                                                             
     }
 
     return(
