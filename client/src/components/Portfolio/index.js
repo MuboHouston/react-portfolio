@@ -11,6 +11,13 @@ function Portfolio() {
             github: 'https://github.com/Sensus0/dinnection'
         },
         {
+            name: 'bota',
+            type: 'React, Node, Express, Sequelize, GraphQL',
+            description: 'An e-commerce app built to promote the Bota lifestyle and promote the sustainable and ethically sourced Bota products',
+            website: 'https://botabotabota.herokuapp.com/',
+            github: 'https://github.com/becketbowes/bota'
+        },
+        {
             name: 'budget',
             type: 'Progress Web App',
             description: 'Budget Tracker is a PWA that allows users keep track of their finances. Users are able to add expenses and deposits to their budget with or without a connection.',
@@ -86,6 +93,14 @@ function Portfolio() {
                             text={projects[4].description}
                             site={projects[4].website}
                             git={projects[4].github}
+                        />
+                        <ProjectList
+                            src={require(`../../assets/${projects[5].name}.png`)}
+                            keys={projects[5].name}
+                            type={projects[5].type}
+                            text={projects[5].description}
+                            site={projects[5].website}
+                            git={projects[5].github}
                         />
                 </div>
         </div>

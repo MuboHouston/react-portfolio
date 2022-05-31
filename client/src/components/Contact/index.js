@@ -39,11 +39,12 @@ function ContactForm() {
         //wrapped in a conditional, so that the state only updates if the form data passed the quality tests
         if(!errorMessage) {
             //the name property of target refers to the name attribute of the form element
-            setFormState({...formState, [e.target.name]: e.target.value})
+            setFormState({...formState, [e.target.name]: e.target.value}
+            )
         }
     }   
     
-    console.log(formState)
+    // console.log(formState)
 
     //this function handles submission of the form data
     const handleSubmit = async (e) => {
@@ -64,7 +65,9 @@ function ContactForm() {
                 message: formState.message
             }
         })
-
+        
+        alert("Message sent! Talk soon :)")
+        window.location.assign('/')
     }
 
     return(
