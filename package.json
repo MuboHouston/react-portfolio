@@ -4,10 +4,11 @@
   "description": "This web application showcases my work and provides professional information.",
   "scripts": {
     "start": "node server/server.js",
+    "build": "cd client && npm run build",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "heroku-postbuild": "npm run install && num run build",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client/src && npm start\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
