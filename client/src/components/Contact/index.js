@@ -66,6 +66,8 @@ function ContactForm() {
             }
         })
         
+        setErrorMessage({name: "", email: "", message: ""})
+
         alert("Message sent! Talk soon :)")
         window.location.assign('/')
     }
