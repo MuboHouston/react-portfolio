@@ -20,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/MuboHouston/react-portfolio/issues"
   },
-  // "homepage": "https://github.com/MuboHouston/react-portfolio#readme",
   "devDependencies": {
     "concurrently": "^7.2.1"
   }
