@@ -34,7 +34,7 @@ function Footer() {
                     href='mailto: houston.mubo@gmail.com'
                     aria-label='Email'
                 >
-                    <i class="fa-solid fa-envelope"></i>
+                    <i className="fa-solid fa-envelope"></i>
                 </a>
             </div>
         </div>
